@@ -30,6 +30,7 @@ df <- read.csv( 'out.01.process/sum_data.csv', row.names = 1 )
 
 # select sentences for main figure
 bf <- read.csv( 'out.03.stats/BF_fits.csv', row.names = 1 )
+bf$phrase <- gsub( '"', '', bf$phrase )
 
 # select hightest Bayes Factor
 sel_1 <- get_data( df, bf, 100, 100000000 )
@@ -59,7 +60,7 @@ outfile <- paste0( outdir, '/Scatterplot__bf-100-1000.png' )
 ggsave( file = outfile, plot = p_1, height = 4, width = 8, dpi = 200 )
 
 outfile <- paste0( outdir, '/Scatterplot__bf-100-1000.csv' )
-ggsave( sel_1, file = outfile )
+write.csv( sel_1, file = outfile )
 
 ############ 10 - 100
 
