@@ -82,7 +82,9 @@ write.csv( all, file = paste0( outdir, '/lm_fits.csv' ) )
 # create table
 tab <- all_bf[ sort.int( all_bf$BayesFactor, index = TRUE, decreasing = TRUE )$ix, ]
 rownames( tab ) <- NULL
-tab$BayesFactor <- round( tab$BayesFactor, 3 )
+tab$BayesFactor[1:125] <- round( tab$BayesFactor[1:125], 1 )
+
+tab$phrase <- paste0( '"', tab$phrase, '"' )
 write.csv( tab, file = paste0( outdir, '/BF_fits.csv' ) )
 
  

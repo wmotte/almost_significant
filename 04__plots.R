@@ -58,6 +58,9 @@ p_1 <- ggplot( data = sel_1, aes( x = labels - 1, y = prev ) ) +
 outfile <- paste0( outdir, '/Scatterplot__bf-100-1000.png' )
 ggsave( file = outfile, plot = p_1, height = 4, width = 8, dpi = 200 )
 
+outfile <- paste0( outdir, '/Scatterplot__bf-100-1000.csv' )
+ggsave( sel_1, file = outfile )
+
 ############ 10 - 100
 
 # main figure
@@ -76,6 +79,9 @@ p_2 <- ggplot( data = sel_2, aes( x = labels - 1, y = prev ) ) +
 # save to disk
 outfile <- paste0( outdir, '/Scatterplot__bf-10-100.png' )
 ggsave( file = outfile, plot = p_2, height = 7, width = 9, dpi = 200 )
+
+outfile <- paste0( outdir, '/Scatterplot__bf-100-1000.csv' )
+ggsave( sel_2, file = outfile )
 
 
 

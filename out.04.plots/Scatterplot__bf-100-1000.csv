@@ -1,0 +1,108 @@
+"","labels","phrase","K","N","prev"
+"11",1990,"""a numerical trend""",1,19324,0.00517491202649555
+"12",1990,"""a positive trend""",19,19324,0.0983233285034154
+"21",1990,"""all but significant""",336,19324,1.7387704409025
+"30",1990,"""an increasing trend""",13,19324,0.0672738563444421
+"37",1990,"""approaches statistical significance""",5,19324,0.0258745601324777
+"48",1990,"""did not quite reach statistical significance""",30,19324,0.155247360794866
+"49",1990,"""difference was apparent""",22,19324,0.113848064582902
+"50",1990,"""failed to reach statistical significance""",100,19324,0.517491202649555
+"70",1990,"""nominally significant""",7,19324,0.0362243841854688
+"76",1990,"""not quite significant""",19,19324,0.0983233285034154
+"118",1993,"""a numerical trend""",2,28476,0.00702345835089198
+"119",1993,"""a positive trend""",37,28476,0.129933979491502
+"130",1993,"""all but significant""",421,28476,1.47843798286276
+"139",1993,"""an increasing trend""",32,28476,0.112375333614272
+"147",1993,"""approaches statistical significance""",8,28476,0.0280938334035679
+"159",1993,"""did not quite reach statistical significance""",27,28476,0.0948166877370417
+"160",1993,"""difference was apparent""",41,28476,0.143980896193286
+"161",1993,"""failed to reach statistical significance""",195,28476,0.684787189211968
+"185",1993,"""nominally significant""",12,28476,0.0421407501053519
+"190",1993,"""not quite significant""",17,28476,0.0596993959825818
+"234",1996,"""a numerical trend""",8,37809,0.0211589833108519
+"235",1996,"""a positive trend""",41,37809,0.108439789468116
+"250",1996,"""all but significant""",504,37809,1.33301594858367
+"263",1996,"""an increasing trend""",41,37809,0.108439789468116
+"271",1996,"""approaches statistical significance""",9,37809,0.0238038562247084
+"284",1996,"""did not quite reach statistical significance""",38,37809,0.100505170726547
+"285",1996,"""difference was apparent""",42,37809,0.111084662381973
+"286",1996,"""failed to reach statistical significance""",202,37809,0.534264328599011
+"315",1996,"""nominally significant""",16,37809,0.0423179666217038
+"323",1996,"""not quite significant""",28,37809,0.0740564415879817
+"373",1999,"""a numerical trend""",9,46311,0.0194338278162855
+"374",1999,"""a positive trend""",69,46311,0.148992679924856
+"388",1999,"""all but significant""",603,46311,1.30206646369113
+"402",1999,"""an increasing trend""",66,46311,0.142514737319427
+"414",1999,"""approaches statistical significance""",8,46311,0.017274513614476
+"421",1999,"""did not quite reach statistical significance""",44,46311,0.0950098248796182
+"422",1999,"""difference was apparent""",40,46311,0.0863725680723802
+"425",1999,"""failed to reach statistical significance""",269,46311,0.580855520286757
+"452",1999,"""nominally significant""",23,46311,0.0496642266416186
+"458",1999,"""not quite significant""",27,46311,0.0583014834488566
+"516",2002,"""a numerical trend""",15,55161,0.0271931255778539
+"517",2002,"""a positive trend""",86,55161,0.155907253313029
+"534",2002,"""all but significant""",823,55161,1.49199615670492
+"546",2002,"""an increasing trend""",82,55161,0.148655753158935
+"556",2002,"""approaches statistical significance""",8,55161,0.0145030003081888
+"572",2002,"""did not quite reach statistical significance""",46,55161,0.0833922517720853
+"573",2002,"""difference was apparent""",47,55161,0.0852051268106089
+"575",2002,"""failed to reach statistical significance""",287,55161,0.520295136056272
+"602",2002,"""nominally significant""",33,55161,0.0598248762712786
+"609",2002,"""not quite significant""",37,55161,0.067076376425373
+"663",2005,"""a numerical trend""",23,63938,0.0359723482123307
+"664",2005,"""a positive trend""",101,63938,0.157965529106322
+"676",2005,"""all but significant""",873,63938,1.3653852169289
+"694",2005,"""an increasing trend""",104,63938,0.162657574525321
+"704",2005,"""approaches statistical significance""",5,63938,0.00782007569833276
+"719",2005,"""did not quite reach statistical significance""",45,63938,0.0703806812849948
+"720",2005,"""difference was apparent""",60,63938,0.0938409083799931
+"722",2005,"""failed to reach statistical significance""",316,63938,0.49422878413463
+"755",2005,"""nominally significant""",64,63938,0.100096968938659
+"762",2005,"""not quite significant""",36,63938,0.0563045450279959
+"818",2008,"""a numerical trend""",17,64857,0.0262115114791002
+"819",2008,"""a positive trend""",124,64857,0.19118984843579
+"838",2008,"""all but significant""",812,64857,1.25198513653114
+"850",2008,"""an increasing trend""",124,64857,0.19118984843579
+"861",2008,"""approaches statistical significance""",7,64857,0.0107929753149236
+"877",2008,"""did not quite reach statistical significance""",53,64857,0.0817182416701358
+"878",2008,"""difference was apparent""",49,64857,0.0755508272044652
+"879",2008,"""failed to reach statistical significance""",299,64857,0.46101423130888
+"909",2008,"""nominally significant""",74,64857,0.114097167614907
+"918",2008,"""not quite significant""",30,64857,0.0462556084925297
+"984",2011,"""a numerical trend""",34,82136,0.0413947599103925
+"985",2011,"""a positive trend""",187,82136,0.227671179507159
+"1000",2011,"""all but significant""",909,82136,1.10670108113373
+"1014",2011,"""an increasing trend""",179,82136,0.217931235998831
+"1025",2011,"""approaches statistical significance""",3,82136,0.00365247881562287
+"1041",2011,"""did not quite reach statistical significance""",39,82136,0.0474822246030973
+"1042",2011,"""difference was apparent""",41,82136,0.0499172104801792
+"1045",2011,"""failed to reach statistical significance""",384,82136,0.467517288399727
+"1078",2011,"""nominally significant""",130,82136,0.158274082010324
+"1083",2011,"""not quite significant""",34,82136,0.0413947599103925
+"1146",2014,"""a numerical trend""",39,86515,0.0450788880540947
+"1147",2014,"""a positive trend""",196,86515,0.226550309194937
+"1166",2014,"""all but significant""",922,86515,1.06571114835578
+"1178",2014,"""an increasing trend""",252,86515,0.291278968964919
+"1188",2014,"""approaches statistical significance""",5,86515,0.00577934462231983
+"1207",2014,"""did not quite reach statistical significance""",24,86515,0.0277408541871352
+"1208",2014,"""difference was apparent""",42,86515,0.0485464948274866
+"1211",2014,"""failed to reach statistical significance""",287,86515,0.331734381321158
+"1241",2014,"""nominally significant""",180,86515,0.208056406403514
+"1248",2014,"""not quite significant""",27,86515,0.0312084609605271
+"1312",2017,"""a numerical trend""",34,79763,0.0426262803555533
+"1313",2017,"""a positive trend""",187,79763,0.234444541955543
+"1331",2017,"""all but significant""",790,79763,0.990434161202563
+"1346",2017,"""an increasing trend""",297,79763,0.372353096047039
+"1357",2017,"""approaches statistical significance""",3,79763,0.00376114238431353
+"1373",2017,"""did not quite reach statistical significance""",31,79763,0.0388651379712398
+"1374",2017,"""difference was apparent""",25,79763,0.0313428532026127
+"1375",2017,"""failed to reach statistical significance""",231,79763,0.289607963592142
+"1411",2017,"""nominally significant""",194,79763,0.243220540852275
+"1417",2017,"""not quite significant""",11,79763,0.0137908554091496
+"1479",2020,"""a numerical trend""",2,3468,0.0576701268742791
+"1480",2020,"""a positive trend""",8,3468,0.230680507497116
+"1486",2020,"""all but significant""",22,3468,0.63437139561707
+"1490",2020,"""an increasing trend""",12,3468,0.346020761245675
+"1497",2020,"""did not quite reach statistical significance""",2,3468,0.0576701268742791
+"1498",2020,"""failed to reach statistical significance""",8,3468,0.230680507497116
+"1504",2020,"""nominally significant""",7,3468,0.201845444059977
