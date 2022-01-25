@@ -81,9 +81,15 @@ p_2 <- ggplot( data = sel_2, aes( x = labels - 1, y = prev ) ) +
 outfile <- paste0( outdir, '/Scatterplot__bf-10-100.png' )
 ggsave( file = outfile, plot = p_2, height = 7, width = 9, dpi = 200 )
 
-outfile <- paste0( outdir, '/Scatterplot__bf-100-1000.csv' )
-ggsave( sel_2, file = outfile )
+# save data of plots
+p1_df <- ggplot_build( p_1 )$data
+p2_df <- ggplot_build( p_2 )$data
 
+# save to csv
+write.csv( p1_df[ 1 ], file = paste0( outdir, '/Fig_3.data1.csv' ) )
+write.csv( p1_df[ 2 ], file = paste0( outdir, '/Fig_3.data2.csv' ) )
 
+write.csv( p2_df[ 1 ], file = paste0( outdir, '/Fig_S1.data1.csv' ) )         
+write.csv( p2_df[ 2 ], file = paste0( outdir, '/Fig_S1.data2.csv' ) )            
 
 

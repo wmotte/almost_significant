@@ -207,3 +207,15 @@ p_R <- plot_prevalence( df, m, outdir )
 # combine
 plot_combined_figure( df, m, outdir, p_N, p_K, p_R )
 
+
+# save data underlying figures
+df_N <- ggplot_build( p_N )$data
+df_K <- ggplot_build( p_K )$data
+df_R <- ggplot_build( p_R )$data
+
+#pg$plot$data
+write.csv( df_N, file = paste0( outdir, '/Fig_2A.data.csv' ) )
+write.csv( df_K, file = paste0( outdir, '/Fig_2B.data.csv' ) )
+write.csv( df_R, file = paste0( outdir, '/Fig_2C.data.csv' ) )
+
+

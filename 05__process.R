@@ -54,6 +54,27 @@ get_median_p <- function( df )
 }
 
 ###
+# Get lower quantile range.
+##
+get_quan1 <- function( df )
+{
+    comb <- ddply( df, c( "phrase" ), summarise, quan1 = quantile( highest_pvalue, probs = 0.25, na.rm = TRUE ) )
+    comb$quan1 <- round( comb$quan1, 3 )
+    return( comb )
+}
+
+###
+# Get upper quantile range.
+##
+get_quan2 <- function( df )
+{
+    comb <- ddply( df, c( "phrase" ), summarise, quan2 = quantile( highest_pvalue, probs = 0.75, na.rm = TRUE ) )
+    comb$quan2 <- round( comb$quan2, 3 )
+    return( comb )
+}
+
+
+###
 #
 ##
 get_prop_phrases <- function( df )
@@ -117,9 +138,27 @@ props_phrases <- get_prop_phrases( df )
 
 # get median P values per phrase
 meds <- get_median_p( df )
+
+# get quantiles for P values per phrase 
+# TODO
+quan1 <- get_quan1( df )
+quan2 <- get_quan2( df )
+# TODO
+###########################################
+
+meds$median <- paste0( meds$median, " (", quan1$quan1, "–", quan2$quan2, ")" )
+
 props_phrases <- merge( props_phrases, meds )
+#props_phrases <- merge( props_phrases, quan1 )
+#props_phrases <- merge( props_phrases, quan2 )
+
+# combine median + quantiles
+#props_phrases$median_quantiles <- paste0( props_phrases$median, " (", props_phrases$quan1, "–", props_phrases$quan2, ")" )
 
 props_phrases[ props_phrases$group != '>=0.05-0.15', 'median' ] <- NA
+#props_phrases[ props_phrases$group != '>=0.05-0.15', 'median_quantiles' ] <- NA
+
+# TODO add quantiles
 
 # remove all phrases with <100 P values
 dim( props_phrases_100 <- props_phrases[ props_phrases$N >= 100, ] )
@@ -130,7 +169,8 @@ dim( props_phrases_30_99 <- props_phrases[ props_phrases$N >= 30 & props_phrases
 p_bar_phrase_100 <- ggplot( props_phrases_100, aes( x = group, y = 100 * prop, ymin = 100 * lower, ymax = 100 * upper, fill = group ) ) + 
 	geom_col( color = 'gray40' ) +
 	geom_errorbar( color = 'gray40', width = 0.5 ) +
-	geom_label( aes( label = median, fontface = 2 ), x = 1, y = 96, color = 'gray60', fill = NA, size = 1.5 ) +
+	geom_label( aes( label = median, fontface = 2 ), x = 1.6, y = 106, color = 'gray60', fill = NA, size = 1.5 ) +
+    #geom_label( aes( label = median_quantiles, fontface = 2 ), x = 1.5, y = 96, color = 'gray60', fill = NA, size = 1.5 ) +
 	xlab( "Category" ) +
 	ylab( "Extracted (%)" ) + 
 	scale_fill_manual( values = c( "#999999", "#E69F00", "#56B4E9" ) ) +
@@ -141,11 +181,21 @@ p_bar_phrase_100 <- ggplot( props_phrases_100, aes( x = group, y = 100 * prop, y
 		   axis.text = element_text( size = 8, colour = 'gray50', angle = 0 ),
 		   axis.title = element_text( size = 10, colour = 'gray50', face = 'bold' ) )
 
+# get more space on top
+p_Fig_5 <- p_bar_phrase_100 + coord_cartesian( ylim = c( 0, 110 ), expand = TRUE )
+
 # write to file	
-outfile <- paste0( outdir, '/range_P_values__phrases_100.png' )
-ggsave( file = outfile, plot = p_bar_phrase_100, height = 9, width = 5, dpi = 300 )
+# [Fig 5]
+outfile <- paste0( outdir, '/Fig_5.png' )
+ggsave( file = outfile, plot = p_Fig_5, height = 9, width = 5, dpi = 300 )
 outfile_csv <- paste0( outdir, '/range_P_values__phrases_100.csv' )
 write.csv( props_phrases, file = outfile_csv )
+
+# save data
+df_Fig_5 <- ggplot_build( p_Fig_5 )$data
+write.csv( df_Fig_5[ 1 ], file = paste0( outdir, '/Fig_5.data1.csv' ) )
+write.csv( df_Fig_5[ 2 ], file = paste0( outdir, '/Fig_5.data2.csv' ) )
+write.csv( df_Fig_5[ 3 ], file = paste0( outdir, '/Fig_5.data3.csv' ) )
 
 
 ### 30-99 ##############
@@ -153,7 +203,8 @@ write.csv( props_phrases, file = outfile_csv )
 p_bar_phrase_30_99 <- ggplot( props_phrases_30_99, aes( x = group, y = 100 * prop, ymin = 100 * lower, ymax = 100 * upper, fill = group ) ) + 
 	geom_col( color = 'gray40' ) +
 	geom_errorbar( color = 'gray40', width = 0.5 ) +
-	geom_label( aes( label = median, fontface = 2 ), x = 1, y = 96, color = 'gray60', fill = NA, size = 1.5 ) +
+    geom_label( aes( label = median, fontface = 2 ), x = 1.6, y = 106, color = 'gray60', fill = NA, size = 1.5 ) +
+	#geom_label( aes( label = median, fontface = 2 ), x = 1, y = 96, color = 'gray60', fill = NA, size = 1.5 ) +
 	xlab( "Category" ) +
 	ylab( "Extracted (%)" ) + 
 	scale_fill_manual( values = c( "#999999", "#E69F00", "#56B4E9" ) ) +
@@ -164,9 +215,19 @@ p_bar_phrase_30_99 <- ggplot( props_phrases_30_99, aes( x = group, y = 100 * pro
 		   axis.text = element_text( size = 8, colour = 'gray50', angle = 0 ),
 		   axis.title = element_text( size = 10, colour = 'gray50', face = 'bold' ) )
 
+# get more space on top
+p_Fig_S2 <- p_bar_phrase_30_99 + coord_cartesian( ylim = c( 0, 110 ), expand = TRUE )
+
 # write to file	
-outfile <- paste0( outdir, '/range_P_values__phrases_30_99.png' )
-ggsave( file = outfile, plot = p_bar_phrase_30_99, height = 9, width = 5, dpi = 300 )
+# [Fig S2]
+outfile <- paste0( outdir, '/Fig_S2.png' )
+ggsave( file = outfile, plot = p_Fig_S2, height = 9, width = 5, dpi = 300 )
 outfile_csv <- paste0( outdir, '/range_P_values__phrases_30_99.csv' )
 write.csv( props_phrases, file = outfile_csv )
+
+# save data
+df_Fig_S2 <- ggplot_build( p_Fig_S2 )$data
+write.csv( df_Fig_S2[ 1 ], file = paste0( outdir, '/Fig_S2.data1.csv' ) )
+write.csv( df_Fig_S2[ 2 ], file = paste0( outdir, '/Fig_S2.data2.csv' ) )
+write.csv( df_Fig_S2[ 3 ], file = paste0( outdir, '/Fig_S2.data3.csv' ) )
 
